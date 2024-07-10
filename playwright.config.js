@@ -1,6 +1,9 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: false,
@@ -11,10 +14,10 @@ export default defineConfig({
   testMatch: '**.spec.ts',
   use: {
     headless: false,
-    baseURL: 'https://qauto.forstudy.space/',
+    baseURL: process.env.BASE_URL,
     httpCredentials: {
-      username: 'guest',
-      password: 'welcome2qauto'
+      username: process.env.USER_NAME,
+      password: process.env.PASSWORD
     },
     trace: 'on',
     testIdAttribute: 'qa-dont-touch'
@@ -25,11 +28,6 @@ export default defineConfig({
       testMatch: '**.spec.ts'
     },
   ],
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
+
 });
 
