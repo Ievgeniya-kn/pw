@@ -17,6 +17,7 @@ export const VALID_DATA = {
     FIRST_NAME: 'Jane',
     LAST_NAME: 'Peeker',
     EMAIL:  `aqa_${faker.internet.userName()}@gmail.com`,
+    EMAIL_SIGN_IN:  `aqa_Jane@gmail.com`,
     PASSWORD: 'Jane_123!',
 }
 export const INVALID_DATA = {

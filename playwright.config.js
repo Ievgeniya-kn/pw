@@ -11,7 +11,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: [['html', { open: 'never' }]],
-  testMatch: '**.spec.ts',
+  // testMatch: '**.spec.ts',
   use: {
     headless: false,
     baseURL: process.env.BASE_URL,
@@ -24,8 +24,28 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'qauto',
-      testMatch: '**.spec.ts'
+      name: 'setup',
+      testDir: './tests/setup',
+      testMatch: '*auth.setup.ts',
+      use: {
+        ...devices['Desktop Chrome'],
+      }
+    },
+    {
+      name: 'registration',
+      testDir: './tests/registration',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+    {
+      name: 'user',
+      testDir: './tests/user',
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'session-storage.json',
+      },
+      dependencies: ['setup'],
     },
   ],
 
