@@ -16,11 +16,21 @@ export const ERRORS = {
 export const VALID_DATA = {
     FIRST_NAME: 'Jane',
     LAST_NAME: 'Peeker',
-    EMAIL:  `aqa_${faker.internet.userName()}@gmail.com`,
-    EMAIL_SIGN_IN:  `aqa_Jane@gmail.com`,
+    EMAIL: `aqa_${faker.internet.userName()}@gmail.com`,
+    EMAIL_SIGN_IN: `aqa_Jane@gmail.com`,
     PASSWORD: 'Jane_123!',
 }
 export const INVALID_DATA = {
     SHORT_NAME: 'A',
     LONG_NAME: 'Very long long long name',
+}
+
+export const RESPONSE_PROFILE = {
+    "status": "ok",
+    "data": {
+        "userId": 130452,
+        "photoFilename": "default-user.png",
+        "name": INVALID_DATA.SHORT_NAME,
+        "lastName": INVALID_DATA.LONG_NAME
+    }
 }
