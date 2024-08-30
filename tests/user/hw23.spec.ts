@@ -4,6 +4,6 @@ import { VALID_DATA } from '../../src/utils/constants';
 
 test.describe('Registration modal validation', () => {
   test('User is registered', async ({ userGaragePage }) => {
-    await expect(userGaragePage.getByText('You don’t have any cars in your garage')).toBeVisible();
+    await expect(userGaragePage.getByLabel('My profile').getByText('Garage')).toBeHidden();
   })
 })
