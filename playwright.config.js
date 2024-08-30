@@ -13,7 +13,7 @@ export default defineConfig({
   reporter: [['html', { open: 'never' }]],
   // testMatch: '**.spec.ts',
   use: {
-    headless: false,
+    headless: true,
     baseURL: process.env.BASE_URL,
     httpCredentials: {
       username: process.env.USER_NAME,
