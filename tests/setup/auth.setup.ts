@@ -1,5 +1,5 @@
 import { test as setup, expect } from '@playwright/test'
-import { ERRORS, VALID_DATA, INVALID_DATA } from '../../src/utils/constants';
+import { VALID_DATA, INVALID_DATA } from '../../src/utils/constants';
 import { HomePage } from '../../src/page/HomePage';
 
 

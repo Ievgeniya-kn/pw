@@ -39,6 +39,22 @@ export default defineConfig({
       },
     },
     {
+      name: 'api',
+      testDir: './tests/api',
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'session-storage.json',
+      },
+      dependencies: ['setup'],
+    },
+    {
+      name: 'apiRequest',
+      testDir: './tests/apiRequest',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+    {
       name: 'user',
       testDir: './tests/user',
       use: {
